@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Product.module.scss';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Button from '../Button/Button';
 
@@ -58,7 +59,13 @@ const Product = ({ title, basePrice, colors, sizes, id, name }) => {
               ))}
             </ul>
           </div>
-          <Button className={styles.button}>
+          <Button className={styles.button}
+          id={id}
+          name={name}
+          title={title}
+          color={currentColor}
+          size={currentSize}
+          basePrice={getPrice()}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
@@ -67,5 +74,18 @@ const Product = ({ title, basePrice, colors, sizes, id, name }) => {
   )
 };
 
+Product.propTypes = {
+  title: PropTypes.string.isRequired,
+  basePrice: PropTypes.number.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sizes: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      additionalPrice: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export default Product;
