@@ -1,10 +1,10 @@
 import styles from './ProductForm.module.scss';
-import Button from '../Button/Button'
+import Button from '../Button/Button';
 import OptionColor from '../OptionColor/OptionColor';
 import OptionSize from '../OptionSize/OptionSize';
 import PropTypes from 'prop-types'
 
-const ProductForm = ({sizes, currentSize, setCurrentSize, colors, currentColor, setCurrentColor, id, title, name, basePrice}) => {
+const ProductForm = ({sizes, currentSize, setCurrentSize, colors, currentColor, setCurrentColor, id, title, name, basePrice, price}) => {
 
 
     return (
@@ -25,7 +25,8 @@ const ProductForm = ({sizes, currentSize, setCurrentSize, colors, currentColor, 
                 title={title}
                 color={currentColor}
                 size={currentSize}
-                basePrice={basePrice}>
+                basePrice={basePrice}
+                price={price}>
                   <span className="fa fa-shopping-cart" />
                 </Button>
               </form>

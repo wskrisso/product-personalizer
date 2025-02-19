@@ -10,7 +10,7 @@ const Button = (props) => {
         console.log('SUMMARY');
         console.log('=======================');
         console.log(`Name: ${props.name}`);
-        console.log(`Price: ${props.basePrice}`);
+        console.log(`Price: ${props.price}`);
         console.log(`Size: ${props.size}`);
         console.log(`Color: ${props.color}`);
       };
